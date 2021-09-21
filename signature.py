@@ -25,18 +25,18 @@ def main():
         "sigfield": "Signature1",
         "auto_sigfield": True,
         "sigandcertify": True,
-        "signaturebox": (0, 840, 570, 640),
+        "signaturebox": (100, 140, 370, 240),
         "signature": "José Luis Bautista Cabrera",
 #        "signature_img": "firma_JL.png",
-        "contact": "jl.bautistac@gmail.com",
+        "contact": "digital@ujed.mx",
         "location": "Durango, MX",
         "signingdate": date,
         "reason": "Firma de documento",
-        "password": "1234",
+        "password": "dtd2021",
     }
-    with open("cert.p12", "rb") as fp:
+    with open("ujed.p12", "rb") as fp:
         p12 = pkcs12.load_key_and_certificates(
-            fp.read(), b"1234", backends.default_backend()
+            fp.read(), b"dtd2021", backends.default_backend()
         )
     fname = "oficio_firma.pdf"
     if len(sys.argv) > 1:
